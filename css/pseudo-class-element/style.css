@@ -2,6 +2,9 @@ p {
   text-align: justify;
   width: 400px;
   margin: 0 auto;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.4s linear;
 
   &::first-letter {
     color: red;
@@ -13,14 +16,17 @@ p {
 
   &::first-line {
     font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: blueviolet;
   }
 
   &::selection {
     color: black;
     background-color: yellow;
   }
-}
 
-p + p {
-  margin-top: 1000px;
+  &:target {
+    background-color: rgb(232, 214, 250);
+    opacity: 1;
+  }
 }
