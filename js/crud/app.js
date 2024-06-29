@@ -9,7 +9,26 @@ form.addEventListener("submit", (event) => {
 
 function addName(name) {
   const ol = document.getElementById("nameList");
-  const li = document.createElement("li");
-  li.textContent = name;
-  ol.appendChild(li);
+  const template = document
+    .getElementById("templateName")
+    .content.cloneNode(true);
+  const spanName = template.querySelector(".name");
+  const spanBin = template.querySelector(".bin");
+  spanName.textContent = name;
+  spanBin.onclick = deleteName;
+  ol.appendChild(template);
 }
+
+function deleteName(event) {
+  const element = event.target;
+  if (confirm("Are you sure to delete this name")) {
+    element.parentNode.remove();
+  }
+}
+
+function bindDeleteName() {
+  const bins = document.querySelectorAll(".bin");
+  bins.forEach((bin) => (bin.onclick = deleteName));
+}
+
+bindDeleteName();
