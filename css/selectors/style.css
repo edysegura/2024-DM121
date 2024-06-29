@@ -10,3 +10,9 @@ h1 {
   border-color: pink;
   margin: 10px 0;
 }
+
+.highlight {
+  background-color: yellow;
+  padding: 0 4px;
+  border: none;
+}
