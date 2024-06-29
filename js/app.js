@@ -21,7 +21,10 @@ function print(text) {
   console.log(text);
 }
 
-const xyz = print;
-console.log("😁", xyz.name);
+function fancyPrint(text) {
+  console.log(`---> 💀 ${text} 💀<---`);
+}
 
-nameList.forEach(print);
+const printerImplementation = fancyPrint;
+
+nameList.forEach(printerImplementation);
