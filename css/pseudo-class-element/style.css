@@ -30,3 +30,12 @@ p {
     opacity: 1;
   }
 }
+
+#first-one {
+  z-index: 1;
+}
+
+#second-one:target {
+  transform: translateY(-100%);
+  z-index: 0;
+}
