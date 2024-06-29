@@ -25,14 +25,15 @@ h1 {
 [href^="http"] {
   border: none;
   text-decoration: none;
-}
+  --fon-size: 0.6rem;
 
-[href^="http"]::before {
-  content: "🔗";
-  font-size: 0.7rem;
-}
+  &::before {
+    content: "🔗";
+    font-size: var(--fon-size);
+  }
 
-[href^="http"]::after {
-  content: "🔗";
-  font-size: 0.7rem;
+  &::after {
+    content: "🔗";
+    font-size: var(--fon-size);
+  }
 }
