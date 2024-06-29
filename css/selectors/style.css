@@ -14,7 +14,8 @@ h1 {
 .highlight {
   background-color: yellow;
   padding: 0 4px;
-  border: none;
+  border: transparent;
+  border-radius: 15px;
 }
 
 .lime {
