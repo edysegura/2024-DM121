@@ -22,12 +22,17 @@ h1 {
   background-color: lime;
 }
 
-[href] {
+[href^="http"] {
   border: none;
   text-decoration: none;
 }
 
-[href]::before {
+[href^="http"]::before {
+  content: "🔗";
+  font-size: 0.7rem;
+}
+
+[href^="http"]::after {
   content: "🔗";
   font-size: 0.7rem;
 }
