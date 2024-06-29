@@ -27,8 +27,11 @@ function fancyPrint(text) {
 
 const printerImplementation = fancyPrint;
 
+const toUpper = (text) => text.toUpperCase();
+
 // prettier-ignore
 nameList
   .sort()
   .reverse()
+  .map(toUpper)
   .forEach(printerImplementation);
