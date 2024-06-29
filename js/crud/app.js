@@ -1,4 +1,5 @@
 const form = document.getElementById("formName");
+const names = JSON.parse(localStorage.getItem("names")) || [];
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,6 +16,8 @@ function addName(name) {
   const spanName = template.querySelector(".name");
   const spanBin = template.querySelector(".bin");
   spanName.textContent = name;
+  names.push(name);
+  localStorage.setItem("names", JSON.stringify(names));
   spanBin.onclick = deleteName;
   ol.appendChild(template);
 }
@@ -23,6 +26,7 @@ function deleteName(event) {
   const element = event.target;
   if (confirm("Are you sure to delete this name")) {
     element.parentNode.remove();
+    localStorage.setItem("names", JSON.stringify(names));
   }
 }
 
@@ -32,3 +36,4 @@ function bindDeleteName() {
 }
 
 bindDeleteName();
+names.forEach(addName);
