@@ -27,4 +27,8 @@ function fancyPrint(text) {
 
 const printerImplementation = fancyPrint;
 
-nameList.forEach(printerImplementation);
+// prettier-ignore
+nameList
+  .sort()
+  .reverse()
+  .forEach(printerImplementation);
